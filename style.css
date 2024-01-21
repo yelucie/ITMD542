@@ -2,3 +2,82 @@
   box-sizing: border-box;
   margin: 0;
 }
+
+body {
+  background-color: #13072e;
+  color: #ffffff;
+}
+
+/* Nav Bar */
+nav {
+  width: 100%;
+  padding: 30px 45px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+}
+
+nav li {
+  margin: 10px;
+}
+
+nav li:not(:last-child) {
+  padding-right: 35px;
+}
+
+nav .menu a,
+nav .home a {
+  text-decoration: none;
+  color: #ffffff;
+}
+
+.home a {
+  display: flex;
+  align-items: center;
+  font-family: "Poppins";
+  font-weight: bold;
+  font-size: 26px;
+}
+
+.home img {
+  margin-right: 12px;
+  max-width: 54px;
+}
+
+.home a:hover {
+  text-decoration: none;
+}
+
+.menu {
+  align-items: baseline;
+  font-family: "Poppins";
+  font-size: 18px;
+  padding: 0px;
+}
+
+.menu li {
+  transition: 1s;
+}
+
+.menu li:hover {
+  transform: scale(1.05);
+  transition: 0.8s;
+}
+
+/* Content box */
+.welcome {
+  background: linear-gradient(to bottom right, #13072e, #3f2182);
+  border-radius: 25px;
+  max-width: 90%;
+  height: 70vh;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
