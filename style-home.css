@@ -1,0 +1,12 @@
+/* Content */
+.welcome p {
+  text-align: center;
+  padding: 20px;
+  font-family: "Poppins";
+  font-size: 28px;
+  line-height: 1.8;
+}
+
+.welcome img {
+  max-width: 150px;
+}
