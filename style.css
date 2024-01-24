@@ -70,16 +70,23 @@ nav .home a {
 }
 
 /* Content box */
-.welcome {
+.content {
   background: linear-gradient(to bottom right, #13072e, #3f2182);
   border-radius: 25px;
   max-width: 90%;
-  height: 70vh;
   margin: auto;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding: 80px 0px;
+}
+
+.content p {
+  padding: 45px;
+  text-align: center;
+  font-size: 28px;
+  line-height: 1.8;
 }
 
 /* Footer */
@@ -104,9 +111,13 @@ ul.icons li {
 }
 
 footer p {
-  font-size: 14px;
+  font-size: 13px;
 }
 
 footer img {
   max-width: 32px;
+}
+
+footer a {
+  color: #ffffff;
 }
