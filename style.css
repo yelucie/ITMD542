@@ -89,6 +89,16 @@ nav .home a {
   line-height: 1.8;
 }
 
+.content .tag {
+  text-align: center;
+  padding: 0px;
+  color: #3E207F;
+  font-family: 'Gluten';
+  font-size: 115px;
+  line-height: 1;
+  overflow: initial;
+}
+
 /* Footer */
 footer {
   text-align: center;
