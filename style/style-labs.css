@@ -1,0 +1,39 @@
+/* Content */
+.content-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  justify-items: center;
+}
+
+.content {
+  align-items: normal;
+  padding: 0;
+  border-radius: 12px;
+}
+
+.content img {
+  margin: 6px;
+  border-radius: 12px;
+}
+
+h1 {
+  padding: 0 26px 15px 26px;
+}
+
+p.technologies {
+  padding: 26px 0 0 26px;
+  font-size: 14px;
+  color: #9185a4;
+  text-align: justify;
+}
+
+p.description {
+  padding: 0 26px 26px 26px;
+  font-size: 16px;
+  text-align: left;
+}
+
+p button {
+  padding: 0;
+}

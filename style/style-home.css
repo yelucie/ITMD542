@@ -1,0 +1,16 @@
+/* Content */
+.content p {
+  text-align: center;
+  font-size: 28px;
+  line-height: 1.8;
+}
+
+.content img {
+  max-width: 150px;
+}
+
+/* Button */
+button:hover {
+  transform: scale(1.05);
+  transition: 0.8s;
+}
