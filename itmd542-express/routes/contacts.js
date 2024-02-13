@@ -1,5 +1,5 @@
 var express = require("express");
-var { body, validationRes } = require("express-validator");
+var { body, validationResult } = require("express-validator");
 var router = express.Router();
 
 const repo = require("../src/repository");
@@ -17,15 +17,21 @@ router.get("/add", function (req, res, next) {
 });
 
 /* POST form to add a contact. */
-router.post("/add", function (req, res, next) {
-  repo.create({
-    firstname: req.body.firstname,
-    lastname: req.body.lastname,
-    email: req.body.email,
-    notes: req.body.notes,
-  });
-  res.redirect("/contacts");
-});
+router.post("/add",
+  body("firstname").trim(),
+  body("lastname").trim(),
+  body("email").trim(),
+  body("notes").trim(),
+  function (req, res, next) {
+    repo.create({
+      firstname: req.body.firstname,
+      lastname: req.body.lastname,
+      email: req.body.email,
+      notes: req.body.notes,
+    });
+    res.redirect("/contacts");
+  }
+);
 
 /* GET a single contact. */
 router.get("/:uuid", function (req, res, next) {
@@ -56,7 +62,12 @@ router.get("/:uuid/edit", function (req, res, next) {
 });
 
 /* POST contact edit */
-router.post("/:uuid/edit", function (req, res, next) {
+router.post("/:uuid/edit",
+  body("firstname").trim(),
+  body("lastname").trim(),
+  body("email").trim(),
+  body("notes").trim(),
+  function (req, res, next) {
   const updatedContact = {
     id: req.params.uuid,
     firstname: req.body.firstname,
