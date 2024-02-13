@@ -22,9 +22,9 @@ router.post("/add", function (req, res, next) {
     firstname: req.body.firstname,
     lastname: req.body.lastname,
     email: req.body.email,
-    notes: req.body.notes
-  })
-  res.redirect('/contacts');
+    notes: req.body.notes,
+  });
+  res.redirect("/contacts");
 });
 
 /* GET a single contact. */
@@ -40,16 +40,34 @@ router.get("/:uuid", function (req, res, next) {
 });
 
 /* GET contact delete */
-router.get('/:uuid/delete', function(req, res, next) {
+router.get("/:uuid/delete", function (req, res, next) {
   repo.deleteById(req.params.uuid);
-  res.redirect('/contacts');
+  res.redirect("/contacts");
 });
 
 /* GET contact edit */
-router.get('/:uuid/edit', function(req, res, next) {
+router.get("/:uuid/edit", function (req, res, next) {
   const contact = repo.findById(req.params.uuid);
 
-  res.render("contacts_input", { title: `Edit ${contact.firstname} ${contact.lastname}`, contact: contact});
+  res.render("contacts_input", {
+    title: `Edit ${contact.firstname} ${contact.lastname}`,
+    contact: contact,
+  });
+});
+
+/* POST contact edit */
+router.post("/:uuid/edit", function (req, res, next) {
+  const updatedContact = {
+    id: req.params.uuid,
+    firstname: req.body.firstname,
+    lastname: req.body.lastname,
+    email: req.body.email,
+    notes: req.body.notes,
+    date: new Date(),
+  };
+
+  repo.update(updatedContact);
+  res.redirect("/contacts");
 });
 
 module.exports = router;

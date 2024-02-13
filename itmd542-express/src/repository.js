@@ -38,15 +38,7 @@ const repo = {
         saveData();
     },
 
-    update: (contact) => {
-        const updatedContact = {
-            id: contact.firstName.id,
-            firstname: contact.firstname,
-            lastname: contact.lastname,
-            email: contact.email,
-            notes: contact.notes,
-            date: new Date()
-        };
+    update: (updatedContact) => {
         db.set(updatedContact.id, updatedContact);
         saveData();
     },
