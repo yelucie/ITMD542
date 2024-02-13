@@ -1,0 +1,15 @@
+extends layout
+
+block content
+  h1= title
+  a(href='/contacts/add') Add a contact
+  hr
+  if contacts.length > 0
+    #contacts-wrapper
+      ul.contacts-list 
+        each val in contacts 
+          li(data-contacts.id=val.id)
+            p #{val.firstname} #{val.lastname} #{val.email}
+            a(href=`/contacts/${val.id}`) Details
+            a(href=`/contacts/edit/${val.id}`) Edit
+            a(href=`/contacts/${val.id}/delete`) Delete

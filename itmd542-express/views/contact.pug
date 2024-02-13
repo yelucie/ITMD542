@@ -1,0 +1,9 @@
+extends layout
+
+block content
+  h1= title
+  hr
+  p= `${contact.firstname} ${contact.lastname} ${contact.email} ${contact.notes} ${contact.date}`
+  div
+    a(href=`/contacts/edit/${contact.id}`) Edit
+    a(href=`/contacts/${contact.id}/delete`) Delete
