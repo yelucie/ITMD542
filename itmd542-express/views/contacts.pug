@@ -11,5 +11,5 @@ block content
           li(data-contacts.id=val.id)
             p #{val.firstname} #{val.lastname} #{val.email}
             a(href=`/contacts/${val.id}`) Details
-            a(href=`/contacts/edit/${val.id}`) Edit
+            a(href=`/contacts/${val.id}/edit`) Edit
             a(href=`/contacts/${val.id}/delete`) Delete

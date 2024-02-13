@@ -13,7 +13,7 @@ router.get("/", function (req, res, next) {
 
 /* GET form to add a contact. */
 router.get("/add", function (req, res, next) {
-  res.render("contacts_add", { title: "Add a new contact" });
+  res.render("contacts_input", { title: "Add a new contact" });
 });
 
 /* POST form to add a contact. */
@@ -39,10 +39,17 @@ router.get("/:uuid", function (req, res, next) {
   }
 });
 
-/* POST todos delete */
+/* GET contact delete */
 router.get('/:uuid/delete', function(req, res, next) {
   repo.deleteById(req.params.uuid);
   res.redirect('/contacts');
+});
+
+/* GET contact edit */
+router.get('/:uuid/edit', function(req, res, next) {
+  const contact = repo.findById(req.params.uuid);
+
+  res.render("contacts_input", { title: `Edit ${contact.firstname} ${contact.lastname}`, contact: contact});
 });
 
 module.exports = router;
