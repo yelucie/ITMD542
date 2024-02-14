@@ -3,5 +3,12 @@ html
   head
     title= title
     link(rel='stylesheet', href='/stylesheets/style.css')
+    link(rel="stylesheet", href="https://rsms.me/inter/inter.css")
   body
+    header
+      nav(class="flex items-center justify-between p-6 mx-auto max-w-7xl lg:px-8")
+        div(class="flex flex-1")
+          div(class="flex gap-x-12")
+            a(href="/" class="text-sm font-semibold leading-6 text-gray-900") Home
+            a(href="/contacts" class="text-sm font-semibold leading-6 text-gray-900") List of contacts
     block content

@@ -2,7 +2,7 @@
 module.exports = {
   content: ["./**/*.pug"],
   theme: {
-    extend: {},
+    extend: {}
   },
   plugins: [require("@tailwindcss/forms"),],
 };
