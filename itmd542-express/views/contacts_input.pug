@@ -7,7 +7,7 @@ block content
         if contact
           | #{contact.firstname} #{contact.lastname}
         else
-          | Create a contact
+          | Add a new contact
     form(method='POST' action= contact ? `/contacts/${contact.id}/edit` : '/contacts/add' class='max-w-xl mx-auto mt-16 sm:mt-20')
       div(class='grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2')
         div
@@ -33,6 +33,6 @@ block content
           if contact
             | Edit the contact
           else
-            | Create 
+            | Add
   footer(class="bottom-0 w-full px-6 pt-8 pb-8 mx-auto border-t border-gray-900/10 max-w-7xl lg:px-8")
       p(class="text-xs leading-5 text-gray-500") Website by Lucie YE for ITMD542 at Illinois Tech during Spring 2024
