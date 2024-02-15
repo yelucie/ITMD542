@@ -1,9 +1,9 @@
-# Project README
+# Lab 2 README
 
 - **Name:** Lucie Ye
 - **Email:** lye10@hawk.iit.edu
 - **Class:** ITMD542 Full-Stack Development | Lab 2
-- **Git Repository URL:** [\[URL\]]https://github.com/yelucie/ITMD542/tree/main/itmd542-express
+- **Git Repository URL:** https://github.com/yelucie/ITMD542/tree/main/itmd542-express
 
 ## Project Description
 This is a contact management system. It allows the user to:
