@@ -20,7 +20,7 @@ I developed this project on a Windows system using NodeJS 18 and Express.js. I p
 To get the project up and running, follow these steps:
 
 1. Clone the repository: `git clone https://github.com/yelucie/ITMD542`
-2. Navigate to the project directory: `cd ./itmd542-express`
+2. Navigate to the project directory: `cd ./ITMD542/itmd542-express/`
 3. Install dependencies: `npm i`
 4. Start the application: `npm start`
 5. Test the application: `http://localhost:3000/`
