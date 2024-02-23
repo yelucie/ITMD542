@@ -1,0 +1,38 @@
+extends layout
+
+block content
+  div(class='px-6 py-24 bg-white isolate sm:py-32 lg:px-8')
+    div(class='max-w-2xl mx-auto text-center')
+      h2(class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl")
+        if contact
+          | #{contact.firstname} #{contact.lastname}
+        else
+          | Add a new contact
+    form(method='POST' action= contact ? `/contacts/${contact.id}/edit` : '/contacts/add' class='max-w-xl mx-auto mt-16 sm:mt-20')
+      div(class='grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2')
+        div
+          label(for='firstname' class="block text-sm font-semibold leading-6 text-gray-900") First Name
+          div(class='mt-2.5')
+            input(type='text' name='firstname' placeholder= contact ? "" : 'First Name' value= contact ? contact.firstname : "" required class='block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6')
+        div
+          label(for='lastname' class="block text-sm font-semibold leading-6 text-gray-900") Last Name
+          div(class='mt-2.5')
+            input(type='text' name='lastname' placeholder= contact ? "" : 'Last Name' value= contact ? contact.lastname : "" required class='block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6')
+        div(class='sm:col-span-2')
+          label(for='email' class="block text-sm font-semibold leading-6 text-gray-900") Email
+          div(class='mt-2.5')
+            input(type='email' name='email' placeholder= contact ? "" : 'example@email.com' value= contact ? contact.email : "" class='block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6')
+        div(class='sm:col-span-2')
+          label(for='notes' class='block text-sm font-semibold leading-6 text-gray-900') Notes
+          div(class='mt-2.5')
+            textarea(name='notes' placeholder= contact ? "" : 'Enter notes' rows='4' class='block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6')
+              if contact
+                | #{contact.notes}
+      div(class='mt-10')
+        button(type='submit' class='block w-full rounded-md bg-indigo-600 px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600') 
+          if contact
+            | Edit the contact
+          else
+            | Add
+  footer(class="bottom-0 w-full px-6 pt-8 pb-8 mx-auto border-t border-gray-900/10 max-w-7xl lg:px-8")
+      p(class="text-xs leading-5 text-gray-500") Website by Lucie YE for ITMD542 at Illinois Tech during Spring 2024
