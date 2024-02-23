@@ -1,4 +1,4 @@
-# Lab 2 README
+# Lab 3 README
 
 - **Name:** Lucie Ye
 - **Email:** lye10@hawk.iit.edu
