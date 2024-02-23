@@ -3,7 +3,7 @@ const betterSqlite3 = require("better-sqlite3");
 
 const db = new betterSqlite3(path.join(__dirname, "../data/contacts.sqlite"));
 const createDb = db.prepare(
-  "CREATE TABLE IF NOT EXISTS contacts (id INTEGER PRIMARY KEY AUTOINCREMENT, firstname TEXT, lastname TEXT, email TEXT, notes TEXT, date TEXT DEFAULT (strftime('%Y-%m-%d %I:%M:%S %p', 'now', 'localtime')))"
+  "CREATE TABLE IF NOT EXISTS contacts (id INTEGER PRIMARY KEY AUTOINCREMENT, firstname TEXT, lastname TEXT, email TEXT, notes TEXT, date TEXT)"
 );
 createDb.run();
 
@@ -17,7 +17,7 @@ const repo = {
 
   create: (contact) => {
     db.prepare(
-      "INSERT INTO contacts (firstname, lastname, email, notes) VALUES (?, ?, ?, ?)"
+      "INSERT INTO contacts (firstname, lastname, email, notes, date) VALUES (?, ?, ?, ?, strftime('%Y-%m-%d %I:%M:%S %p', 'now', 'localtime'))"
     ).run(contact.firstname, contact.lastname, contact.email, contact.notes);
   },
 
